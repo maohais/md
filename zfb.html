@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转到支付宝示例</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>支付宝跳转测试页面</h1>
+        
+        <!-- 
+            核心实现：
+            我们使用一个 <a> 标签，它的 href 属性直接指向您提供的支付宝Scheme链接。
+            通过CSS样式，我们将这个链接渲染成一个用户友好的按钮。
+        -->
+        <a href="alipay://nfc/app?id=10000007&actionType=route&codeContent=https%3A%2F%2Fqr.alipay.com%2Flpx11056sy6xed6dwxhp98e%3FnoT%3Dnt007wll8n8f" class="button" id="jmp_button">
+            点击跳转到支付宝
+        </a>
+
+        <p>请在已安装支付宝的安卓设备上点击此按钮。</p>
+
+        <!-- 
+            另一种JS实现方式 (效果相同，作为参考)
+            <button onclick="jumpToAlipay()">点击跳转</button>
+            <script>
+                function jumpToAlipay() {
+                    window.location.href = "alipay://nfc/app?id=10000007&actionType=route&codeContent=https%3A%2F%2Fqr.alipay.com%2Flpx11056sy6xed6dwxhp98e%3FnoT%3Dnt007wll8n8f";
+                }
+            </script>
+        -->
+    </div>
+</body>
+</html>
